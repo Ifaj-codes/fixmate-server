@@ -77,7 +77,7 @@ router.patch('/users/:id/role', async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    // Crucial rule: Admin cannot change their own role!
+    // Safety rule: Admin cannot change their own role!
     if (targetUser.email === req.user.email) {
       return res.status(403).json({
         success: false,
