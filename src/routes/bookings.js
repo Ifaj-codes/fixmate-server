@@ -66,8 +66,8 @@ router.post('/', verifyToken, verifyCustomer, async (req, res) => {
       finalAmount: service.basePrice, // default = basePrice until technician completes
       technicianName: service.technicianName,
       technicianEmail: service.technicianEmail,
-      customerName: req.user.name,
-      customerEmail: req.user.email,
+      customerName: (req.body.customerName || req.user.name || 'Nesar Uddin Ifaj (Customer)').trim(),
+      customerEmail: (req.body.customerEmail || req.user.email || 'customer@fixmate.com').trim(),
       customerPhone: customerPhone.trim(),
       address: address.trim(),
       preferredDate: bookingDate,
