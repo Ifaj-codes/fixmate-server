@@ -13,17 +13,31 @@ let dbInstance = null;
 let isUsingLocalStore = false;
 
 // Local JSON fallback store for offline/local development without MongoDB
-const fallbackFilePath = path.resolve('data_store.json');
+// On Vercel serverless environments, file writing is restricted to /tmp
+const bundledPath = path.resolve('data_store.json');
+const fallbackFilePath = process.env.VERCEL ? path.join('/tmp', 'data_store.json') : bundledPath;
 
 const getLocalData = () => {
   if (!fs.existsSync(fallbackFilePath)) {
+    if (fs.existsSync(bundledPath) && fallbackFilePath !== bundledPath) {
+      try {
+        fs.copyFileSync(bundledPath, fallbackFilePath);
+        return JSON.parse(fs.readFileSync(fallbackFilePath, 'utf-8'));
+      } catch (err) {
+        console.warn('Could not copy bundled data_store to /tmp:', err.message);
+      }
+    }
     const initialData = {
       users: [],
       services: [],
       bookings: [],
       payments: []
     };
-    fs.writeFileSync(fallbackFilePath, JSON.stringify(initialData, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(fallbackFilePath, JSON.stringify(initialData, null, 2), 'utf-8');
+    } catch (err) {
+      console.warn('Could not initialize fallback store:', err.message);
+    }
     return initialData;
   }
   try {
@@ -34,7 +48,11 @@ const getLocalData = () => {
 };
 
 const saveLocalData = (data) => {
-  fs.writeFileSync(fallbackFilePath, JSON.stringify(data, null, 2), 'utf-8');
+  try {
+    fs.writeFileSync(fallbackFilePath, JSON.stringify(data, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('Could not write fallback store:', err.message);
+  }
 };
 
 // Create collection wrapper that supports MongoDB or Local Store with identical API

@@ -74,24 +74,28 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start Server
+// Server Startup (Local vs Vercel Serverless)
 async function startServer() {
   try {
     await connectDB();
     await runSeed();
 
-    app.listen(PORT, () => {
-      console.log(`===============================================`);
-      console.log(`🚀 FixMate Express API running on port ${PORT}`);
-      console.log(`📡 URL: http://localhost:${PORT}`);
-      console.log(`🔑 Admin:      admin@fixmate.com / Admin123#`);
-      console.log(`🛠️ Technician: rahim.tech@fixmate.com / Tech123#`);
-      console.log(`👤 Customer:   customer@fixmate.com / User123#`);
-      console.log(`===============================================`);
-    });
+    if (!process.env.VERCEL) {
+      app.listen(PORT, () => {
+        console.log(`===============================================`);
+        console.log(`🚀 FixMate Express API running on port ${PORT}`);
+        console.log(`📡 URL: http://localhost:${PORT}`);
+        console.log(`🔑 Admin:      admin@fixmate.com / Admin123#`);
+        console.log(`🛠️ Technician: rahim.tech@fixmate.com / Tech123#`);
+        console.log(`👤 Customer:   customer@fixmate.com / User123#`);
+        console.log(`===============================================`);
+      });
+    }
   } catch (err) {
-    console.error('Failed to start server:', err);
-    process.exit(1);
+    console.error('Startup initialization notice:', err.message);
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
   }
 }
 
