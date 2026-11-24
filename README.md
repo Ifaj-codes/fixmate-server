@@ -34,3 +34,10 @@ npm install
 npm run seed     # Populate realistic data
 npm run dev      # Start server with file watching
 ```
+
+## 👨‍💻 Author & Maintainer
+- **Developer**: Nesar Uddin Ifaj
+- **Student ID**: 1119004 (BAIUST CSE)
+- **GitHub**: [Ifaj-codes](https://github.com/Ifaj-codes)
+- **LinkedIn**: [Nesar Uddin Ifaj](https://www.linkedin.com/in/nesar-uddin-ifaj-0a8567446)
+- **Email**: nesaruddinifaj@gmail.com
