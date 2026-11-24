@@ -297,9 +297,341 @@
       "technicianEmail": "suman.tech@fixmate.com",
       "approvalStatus": "pending",
       "isAvailable": true
+    },
+    {
+      "_id": "srv_rahim_5",
+      "title": "Gaming PC Health Check",
+      "category": "Laptop & PC",
+      "description": "Full benchmark, thermal paste renewal, dust extraction and stability stress testing.",
+      "basePrice": 30,
+      "estimatedDuration": "1-2 hours",
+      "serviceMode": "Doorstep Visit",
+      "serviceArea": "Banani, Gulshan, Dhanmondi",
+      "technicianName": "Rahim Uddin (Hardware Pro)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "technicianPhone": "+8801722334455",
+      "approvalStatus": "pending",
+      "isAvailable": false,
+      "rating": 4.8,
+      "totalReviews": 12,
+      "imageUrl": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80",
+      "createdAt": "2026-11-10T10:00:00.000Z"
+    },
+    {
+      "_id": "srv_rahim_6",
+      "title": "Phone Water Damage Recovery",
+      "category": "Smartphone",
+      "description": "Ultrasonic chemical bath board cleaning and corrosion removal with short-circuit diagnostic.",
+      "basePrice": 40,
+      "estimatedDuration": "2-3 hours",
+      "serviceMode": "Workshop Pickup",
+      "serviceArea": "Dhaka City",
+      "technicianName": "Rahim Uddin (Hardware Pro)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "technicianPhone": "+8801722334455",
+      "approvalStatus": "rejected",
+      "isAvailable": true,
+      "rating": 4.6,
+      "totalReviews": 9,
+      "imageUrl": "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=800&q=80",
+      "createdAt": "2026-11-08T10:00:00.000Z"
+    },
+    {
+      "_id": "srv_rahim_7",
+      "title": "LED TV Backlight Repair",
+      "category": "TV",
+      "description": "Replacement of burned LED backlight strip bars with original optical diffusing lenses.",
+      "basePrice": 70,
+      "estimatedDuration": "2-4 hours",
+      "serviceMode": "Doorstep Visit",
+      "serviceArea": "Uttara, Mirpur, Dhaka",
+      "technicianName": "Rahim Uddin (Hardware Pro)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "technicianPhone": "+8801722334455",
+      "approvalStatus": "approved",
+      "isAvailable": true,
+      "rating": 4.9,
+      "totalReviews": 18,
+      "imageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80",
+      "createdAt": "2026-11-05T10:00:00.000Z"
+    },
+    {
+      "_id": "srv_rahim_8",
+      "title": "House Wiring Fault Finding",
+      "category": "Electrical",
+      "description": "Comprehensive insulation resistance testing, neutral grounding check and RCCB leakage fix.",
+      "basePrice": 30,
+      "estimatedDuration": "1-3 hours",
+      "serviceMode": "Doorstep Visit",
+      "serviceArea": "All Dhaka",
+      "technicianName": "Rahim Uddin (Hardware Pro)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "technicianPhone": "+8801722334455",
+      "approvalStatus": "approved",
+      "isAvailable": true,
+      "rating": 5.0,
+      "totalReviews": 24,
+      "imageUrl": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+      "createdAt": "2026-11-02T10:00:00.000Z"
     }
   ],
   "bookings": [
+    {
+      "_id": "bkg_1045",
+      "ticketNo": "FM-1045",
+      "serviceId": "srv_1",
+      "serviceTitle": "Smartphone Screen Replacement",
+      "serviceImage": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80",
+      "category": "Smartphone",
+      "basePrice": 55,
+      "finalAmount": 55,
+      "technicianName": "Rahim Uddin (Pro Tech)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "customerName": "Nesar Uddin Ifaj (Customer)",
+      "customerEmail": "customer@fixmate.com",
+      "customerPhone": "+8801755123456",
+      "address": "Dhanmondi, Dhaka",
+      "preferredDate": "2026-11-28T10:00:00.000Z",
+      "problemDescription": "Dropped my Samsung A54, screen cracked and touch does not work on the left side.",
+      "status": "completed",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-07T09:00:00.000Z"
+        },
+        {
+          "status": "accepted",
+          "changedAt": "2026-11-07T14:30:00.000Z"
+        },
+        {
+          "status": "in-progress",
+          "changedAt": "2026-11-08T11:00:00.000Z"
+        },
+        {
+          "status": "completed",
+          "changedAt": "2026-11-10T16:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-11-07T09:00:00.000Z"
+    },
+    {
+      "_id": "bkg_1048",
+      "ticketNo": "FM-1048",
+      "serviceId": "srv_3",
+      "serviceTitle": "AC Servicing & Gas Refill",
+      "serviceImage": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
+      "category": "AC",
+      "basePrice": 40,
+      "finalAmount": 40,
+      "technicianName": "Karimul Hasan (HVAC & Cooling)",
+      "technicianEmail": "karim.repair@fixmate.com",
+      "customerName": "Nesar Uddin Ifaj (Customer)",
+      "customerEmail": "customer@fixmate.com",
+      "customerPhone": "+8801755123456",
+      "address": "Cumilla Cantonment, Cumilla",
+      "preferredDate": "2026-11-29T10:00:00.000Z",
+      "problemDescription": "Bedroom AC drips water inside and cooling is weak. 1.5 ton Gree split.",
+      "status": "requested",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-15T09:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-11-15T09:00:00.000Z"
+    },
+    {
+      "_id": "bkg_1049",
+      "ticketNo": "FM-1049",
+      "serviceId": "srv_8",
+      "serviceTitle": "LED TV Backlight Repair",
+      "serviceImage": "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80",
+      "category": "TV",
+      "basePrice": 70,
+      "finalAmount": 70,
+      "technicianName": "Rahim Uddin (Pro Tech)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "customerName": "Nesar Uddin Ifaj (Customer)",
+      "customerEmail": "customer@fixmate.com",
+      "customerPhone": "+8801755123456",
+      "address": "Mirpur 10, Dhaka",
+      "preferredDate": "2026-11-20T10:00:00.000Z",
+      "problemDescription": "Walton 43 inch TV has sound but the screen is black.",
+      "status": "rejected",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-01T09:00:00.000Z"
+        },
+        {
+          "status": "rejected",
+          "changedAt": "2026-11-02T10:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "_id": "bkg_1050",
+      "ticketNo": "FM-1050",
+      "serviceId": "srv_13",
+      "serviceTitle": "Ceiling Fan & Switchboard Fix",
+      "serviceImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
+      "category": "Electrical",
+      "basePrice": 30,
+      "finalAmount": 30,
+      "technicianName": "Suman Roy (Home Electronics)",
+      "technicianEmail": "suman.tech@fixmate.com",
+      "customerName": "Nesar Uddin Ifaj (Customer)",
+      "customerEmail": "customer@fixmate.com",
+      "customerPhone": "+8801755123456",
+      "address": "Dhanmondi 27, Dhaka",
+      "preferredDate": "2026-11-18T10:00:00.000Z",
+      "problemDescription": "Regulator burnt and ceiling fan runs only on full speed.",
+      "status": "cancelled",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-05T09:00:00.000Z"
+        },
+        {
+          "status": "cancelled",
+          "changedAt": "2026-11-06T12:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-11-05T09:00:00.000Z"
+    },
+    {
+      "_id": "bkg_1051",
+      "ticketNo": "FM-1051",
+      "serviceId": "srv_1",
+      "serviceTitle": "Phone Battery Replacement",
+      "serviceImage": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80",
+      "category": "Smartphone",
+      "basePrice": 25,
+      "finalAmount": 25,
+      "technicianName": "Rahim Uddin (Pro Tech)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "customerName": "Sadia Rahman",
+      "customerEmail": "sadia.user@fixmate.com",
+      "customerPhone": "01733-556677",
+      "address": "Flat 5B, Road 11, Banani, Dhaka",
+      "preferredDate": "2026-11-27T10:00:00.000Z",
+      "problemDescription": "iPhone 12 battery health is at 74% and it dies by evening.",
+      "status": "accepted",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-16T09:00:00.000Z"
+        },
+        {
+          "status": "accepted",
+          "changedAt": "2026-11-16T15:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
+    {
+      "_id": "bkg_1052",
+      "ticketNo": "FM-1052",
+      "serviceId": "srv_2",
+      "serviceTitle": "Laptop Motherboard Diagnosis & Repair",
+      "serviceImage": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80",
+      "category": "Laptop & PC",
+      "basePrice": 80,
+      "finalAmount": 80,
+      "technicianName": "Rahim Uddin (Pro Tech)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "customerName": "Tanvir Hasan",
+      "customerEmail": "tanvir.user@fixmate.com",
+      "customerPhone": "01555-121212",
+      "address": "Block C, Mohammadpur, Dhaka",
+      "preferredDate": "2026-11-28T10:00:00.000Z",
+      "problemDescription": "Dell Inspiron does not power on at all, no lights when charger is connected.",
+      "status": "requested",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-15T09:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-11-15T09:00:00.000Z"
+    },
+    {
+      "_id": "bkg_1053",
+      "ticketNo": "FM-1053",
+      "serviceId": "srv_13",
+      "serviceTitle": "House Wiring Fault Finding",
+      "serviceImage": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80",
+      "category": "Electrical",
+      "basePrice": 38,
+      "finalAmount": 38,
+      "technicianName": "Rahim Uddin (Pro Tech)",
+      "technicianEmail": "rahim.tech@fixmate.com",
+      "customerName": "Tanvir Hasan",
+      "customerEmail": "tanvir.user@fixmate.com",
+      "customerPhone": "01555-121212",
+      "address": "Banani DOHS, Dhaka",
+      "preferredDate": "2026-09-27T10:00:00.000Z",
+      "problemDescription": "Main circuit breaker trips frequently whenever AC is turned on.",
+      "status": "completed",
+      "paymentStatus": "paid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-09-26T09:00:00.000Z"
+        },
+        {
+          "status": "accepted",
+          "changedAt": "2026-09-26T12:00:00.000Z"
+        },
+        {
+          "status": "in-progress",
+          "changedAt": "2026-09-27T10:00:00.000Z"
+        },
+        {
+          "status": "completed",
+          "changedAt": "2026-09-27T15:00:00.000Z"
+        },
+        {
+          "status": "paid",
+          "changedAt": "2026-09-27T16:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-09-26T09:00:00.000Z"
+    },
+    {
+      "_id": "bkg_1054",
+      "ticketNo": "FM-1054",
+      "serviceId": "srv_5",
+      "serviceTitle": "Refrigerator Gas Recharge",
+      "serviceImage": "https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=800&q=80",
+      "category": "Refrigerator",
+      "basePrice": 35,
+      "finalAmount": 35,
+      "technicianName": "Karimul Hasan (HVAC & Cooling)",
+      "technicianEmail": "karim.repair@fixmate.com",
+      "customerName": "Nesar Uddin Ifaj (Customer)",
+      "customerEmail": "customer@fixmate.com",
+      "customerPhone": "+8801755123456",
+      "address": "Dhaka, Dhanmondi",
+      "preferredDate": "2026-11-26T10:00:00.000Z",
+      "problemDescription": "Fridge compressor is running continuously but the freezer is not making ice.",
+      "status": "requested",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-16T09:00:00.000Z"
+        }
+      ],
+      "createdAt": "2026-11-16T09:00:00.000Z"
+    },
     {
       "_id": "bkg_1",
       "createdAt": "2026-02-15T10:00:00.000Z",
@@ -340,7 +672,8 @@
           "status": "paid",
           "changedAt": "2026-02-15T15:30:00.000Z"
         }
-      ]
+      ],
+      "ticketNo": "FM-3354"
     },
     {
       "_id": "bkg_2",
@@ -378,7 +711,8 @@
           "status": "completed",
           "changedAt": "2026-02-20T14:00:00.000Z"
         }
-      ]
+      ],
+      "ticketNo": "FM-8840"
     },
     {
       "_id": "bkg_3",
@@ -397,7 +731,7 @@
       "address": "Banani Block C, Road 11, Dhaka",
       "preferredDate": "2026-02-22T00:00:00.000Z",
       "problemDescription": "Asus ROG Strix throttling CPU to 98C during rendering and shutting down randomly.",
-      "status": "in-progress",
+      "status": "completed",
       "paymentStatus": "unpaid",
       "statusHistory": [
         {
@@ -411,8 +745,14 @@
         {
           "status": "in-progress",
           "changedAt": "2026-02-22T11:00:00.000Z"
+        },
+        {
+          "status": "completed",
+          "changedAt": "2026-11-24T15:00:28.146Z"
         }
-      ]
+      ],
+      "updatedAt": "2026-11-24T15:00:28.147Z",
+      "ticketNo": "FM-1351"
     },
     {
       "_id": "bkg_4",
@@ -438,7 +778,35 @@
           "status": "requested",
           "changedAt": "2026-02-24T10:00:00.000Z"
         }
-      ]
+      ],
+      "ticketNo": "FM-3950"
+    },
+    {
+      "_id": "6b05a528412e0eaa1ab89c5c",
+      "createdAt": "2026-11-24T14:54:32.989Z",
+      "serviceId": "srv_12",
+      "serviceTitle": "Washing Machine Drain Pump & Inlet Solenoid Valve Fix",
+      "serviceImage": "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=800&q=80",
+      "category": "Washing Machine",
+      "basePrice": 32,
+      "finalAmount": 32,
+      "technicianName": "Suman Roy (Home Electronics)",
+      "technicianEmail": "suman.tech@fixmate.com",
+      "customerName": "Najmus Sakib (Customer)",
+      "customerEmail": "customer@fixmate.com",
+      "customerPhone": "+8801755123456",
+      "address": "Cumilla Cantonment",
+      "preferredDate": "2026-11-26T00:00:00.000Z",
+      "problemDescription": "The washing machine water pump is making a loud noise and not draining water properly.",
+      "status": "requested",
+      "paymentStatus": "unpaid",
+      "statusHistory": [
+        {
+          "status": "requested",
+          "changedAt": "2026-11-24T14:54:32.989Z"
+        }
+      ],
+      "ticketNo": "FM-9985"
     }
   ],
   "payments": [

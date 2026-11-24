@@ -58,6 +58,7 @@ router.post('/', verifyToken, verifyCustomer, async (req, res) => {
     }
 
     const newBooking = {
+      ticketNo: 'FM-' + Math.floor(1000 + Math.random() * 9000),
       serviceId: service._id.toString(),
       serviceTitle: service.title,
       serviceImage: service.image,

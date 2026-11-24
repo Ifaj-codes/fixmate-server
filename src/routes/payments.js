@@ -100,7 +100,7 @@ router.post('/create-checkout-session', verifyToken, verifyCustomer, async (req,
       }
     });
 
-    const mockCheckoutUrl = `${CLIENT_URL}/payment/success?session_id=${mockSessionId}`;
+    const mockCheckoutUrl = `${CLIENT_URL}/payment/checkout?bookingId=${booking._id}&amount=${finalAmount}&serviceTitle=${encodeURIComponent(booking.serviceTitle)}&ticketNo=${booking.ticketNo || 'FM-1045'}`;
     res.status(200).json({
       success: true,
       url: mockCheckoutUrl,
@@ -109,6 +109,73 @@ router.post('/create-checkout-session', verifyToken, verifyCustomer, async (req,
   } catch (err) {
     console.error('Checkout session error:', err);
     res.status(500).json({ success: false, message: 'Failed to initiate payment session' });
+  }
+});
+
+// POST /api/payments/complete-simulated-payment (Customer: Simulated Stripe Pay with Card)
+router.post('/complete-simulated-payment', verifyToken, verifyCustomer, async (req, res) => {
+  try {
+    const { bookingId } = req.body;
+    if (!bookingId) {
+      return res.status(400).json({ success: false, message: 'bookingId is required' });
+    }
+
+    const booking = await bookingsCollection.findOne({ _id: bookingId });
+    if (!booking) {
+      return res.status(404).json({ success: false, message: 'Booking not found' });
+    }
+
+    if (booking.customerEmail !== req.user.email) {
+      return res.status(403).json({ success: false, message: 'Forbidden: You can only pay for your own booking' });
+    }
+
+    if (booking.status !== 'completed' || booking.paymentStatus === 'paid') {
+      return res.status(400).json({ success: false, message: 'Payment is only allowed for completed, unpaid bookings' });
+    }
+
+    const finalAmount = Number(booking.finalAmount || booking.basePrice);
+    const txnId = 'pi_' + Math.random().toString(36).substring(2, 10).toUpperCase() + Math.random().toString(36).substring(2, 10).toUpperCase();
+    const sessionId = 'cs_sim_' + Date.now();
+
+    // Check if already paid (idempotency safety check)
+    const existing = await paymentsCollection.findOne({ bookingId: booking._id.toString() });
+    if (!existing) {
+      const newPayment = {
+        bookingId: booking._id.toString(),
+        serviceTitle: booking.serviceTitle,
+        customerName: req.user.name,
+        customerEmail: req.user.email,
+        technicianName: booking.technicianName,
+        technicianEmail: booking.technicianEmail,
+        amount: finalAmount,
+        currency: 'usd',
+        transactionId: txnId,
+        stripeSessionId: sessionId,
+        paymentStatus: 'paid',
+        paidAt: new Date()
+      };
+      await paymentsCollection.insertOne(newPayment);
+
+      await bookingsCollection.updateOne(
+        { _id: booking._id },
+        {
+          $set: { paymentStatus: 'paid', updatedAt: new Date() },
+          $push: { statusHistory: { status: 'paid', changedAt: new Date() } }
+        }
+      );
+    }
+
+    res.status(200).json({
+      success: true,
+      transactionId: txnId,
+      amount: finalAmount,
+      serviceTitle: booking.serviceTitle,
+      technicianName: booking.technicianName,
+      date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+    });
+  } catch (err) {
+    console.error('Simulated payment error:', err);
+    res.status(500).json({ success: false, message: 'Failed to process payment' });
   }
 });
 
